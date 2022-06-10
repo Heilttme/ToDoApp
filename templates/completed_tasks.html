@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/tasks_styles.css' %}">
+</head>
+<div class="main">
+    <div class="tasks_element">
+        <h1 class="title">Finished tasks</h1>
+        {% for task in object_list %}
+        {% if task.is_finished %}
+        {% if task.user_id == request.user.id %}
+        <li>
+            <div class="task_element">
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.additional_information }}</p>
+                <p>expired at {{ task.time_expiration }}</p>
+            </div>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color: black;
+}
+.nav{
+    position: fixed;
+    height: 100%;
+    width: 220px;
+    padding: 20px 0px 0px 40px;
+    background-color: grey;
+}
+
+.nav li{
+    font-size: 20px;
+    font-weight: 500;
+    list-style: none;
+    padding-top: 20px;
+}
+
+.nav a:hover{
+    color: #fff;
+}
+
+.options{
+    padding-top: 20px;
+}
+
+.main{
+    margin-left: 260px;
+    padding: 30px 0 0 20px;
+    font-size: 25px;
+}

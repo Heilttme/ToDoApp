@@ -1,0 +1,29 @@
+li{
+    list-style: none;
+}
+
+.tasks_block{
+    margin-top: 40px;
+}
+
+.task_element{
+    border: 5px solid grey;
+    margin-top: -5px;
+    padding: 10px 0 10px 20px;
+}
+
+.title{
+    margin-bottom:30px;
+}
+
+.btn{
+    width: 200px;
+    padding: 8px 10px;
+    margin: 10px 0px 10px 0px;
+    font-size: 15px;
+    border: 0px;
+    background-color: #3366ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}

@@ -1,0 +1,38 @@
+li{
+    list-style: none;
+    color: red;
+}
+
+.btn{
+    width: 200px;
+    padding: 8px 10px;
+    margin: 10px 0px 10px 0px;
+    font-size: 15px;
+    border: 0px;
+    background-color: #3366ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.form_fields{
+    position: relative;
+    right: 85px;
+}
+
+.form-field{
+    width:350px;
+    height:25px;
+}
+
+.form{
+    padding:20px 10px 10px 10px;
+}
+
+.label{
+    margin-bottom: 10px;
+}
+
+.error{
+    color: red;
+}

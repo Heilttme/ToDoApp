@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/sign_up_styles.css' %}">
+    <title>Sign up</title>
+</head>
+<div class="main">
+    {% if not request.user.is_authenticated %}
+    <h1>Sign up to save your tasks</h1>
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>{{ field.errors }}</p>
+            <label class="label">{{ field.label }}</label><br>
+            <p>{{ field }}</p>
+            {% endfor %}
+            <button class="btn" type="submit">Sign up</button>
+        </form>
+    </div>
+    {% elif request.user.is_authenticated %}
+    <h1>You are already logged in</h1>
+    {% endif %}
+</div>
+
+{% endblock %}

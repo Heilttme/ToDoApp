@@ -1,0 +1,31 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoApp!</title>
+</head>
+<body>
+    <nav class="nav">
+        <h1>ToDoApp</h1>
+        <ul class="options">
+            <li><a class="index" href="{% url 'index' %}">Home</a></li>
+            <li><a class="tasks" href="{% url 'to_do_tasks' %}">Tasks to do</a></li>
+            <li><a class="completed_tasks" href="{% url 'completed_tasks' %}">Completed tasks</a></li>
+            {% if not request.user.is_authenticated %}
+            <li><a class="sing_up" href="{% url 'sign_up' %}">Sign up</a></li>
+            <li><a class="sing_in" href="{% url 'sign_in' %}">Sign in</a></li>
+            {% elif request.user.is_authenticated %}
+            <li><a class="logout" href="{% url 'logout' %}">{{ request.user.username }}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="main_body">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

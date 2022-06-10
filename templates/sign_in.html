@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/sign_up_styles.css' %}">
+  <title>Sign in</title>
+</head>
+<div class="main">
+  {% if not request.user.is_authenticated %}
+  <h1>Sign in your account</h1>
+  <div class="form">
+    <form method="post" action="">
+      {% csrf_token %}
+      <p>
+        <p>{{ field.errors }}</p>
+        <label class="form_label" for="form.auto_id">{{ form.email.label }}</label><br>
+        {{ form.email }}
+      </p>
+      <p>
+        <p>{{ field.errors }}</p>
+        <label class="form_label" for="form.auto_id">{{ form.password.label }}</label><br>
+        {{ form.password }}
+      </p>
+      <p>
+        {{ form.remember_me }}
+        <label class="form_label" for="form.auto_id">{{ form.remember_me.label }}</label><br>
+      </p>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+    <p class="error">{{ message }}<p>
+  </div>
+  {% elif request.user.is_authenticated %}
+  <h1>You are already logged in</h1>
+  {% endif %}
+</div>
+
+{% endblock %}
